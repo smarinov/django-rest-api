@@ -19,7 +19,6 @@ class ProductList(generics.ListCreateAPIView):
         return queryset
 
     def perform_create(self, serializer):
-        print(self.request.user)
         serializer.save(seller=self.request.user)
 
 
