@@ -1,4 +1,3 @@
-from django.contrib import auth
 from django.db import models
 
 
@@ -8,10 +7,6 @@ class Category(models.Model):
     class Meta:
         verbose_name = 'Category'
         verbose_name_plural = 'Categories'
-
-    @property
-    def all_products(self):
-        return [f'{product.brand} {product.model}' for product in self.products.all()]
 
     def __str__(self):
         return self.category_name
